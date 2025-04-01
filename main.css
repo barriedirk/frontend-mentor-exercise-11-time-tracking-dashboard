@@ -192,7 +192,7 @@ body {
   align-items: center;
 }
 
-.card--work__time {
+.card__time {
   font-size: 3.2rem;
   font-weight: var(--fw-light);
 }
@@ -211,7 +211,7 @@ body {
   background-position: 100% center;
 }
 
-.card--work__previous {
+.card__previous {
   font-size: 1.5rem;
   color: var(--clr-navy-200);
   font-weight: var(--fw-normal);
