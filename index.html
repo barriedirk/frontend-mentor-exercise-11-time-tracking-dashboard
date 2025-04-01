@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Time tracking dashboard</title>
+
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <style>
+      .attribution {
+        font-size: 1rem;
+        text-align: center;
+        color: var(--clr-purple-500);
+      }
+      .attribution a {
+        color: var(--clr-purple-500);
+      }
+    </style>
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <main class="report__wrapper">
+      <section class="report__header" aria-label="User Profile">
+        <div class="profile-info">
+          <img
+            src="./images/image-jeremy.png"
+            alt="Profile photo of Jeremy Robson"
+            class="profile-image"
+          />
+          <div class="profile-text">
+            <p class="profile-text-report">Report for</p>
+            <h1 class="profile-text-name">Jeremy Robson</h1>
+          </div>
+        </div>
+        <nav class="report__header--nav" aria-label="Time period selection">
+          <ul role="tablist">
+            <li role="presentation">
+              <button
+                class="report__nav--daily color-white"
+                role="tab"
+                aria-selected="false"
+                aria-controls="daily-stats"
+              >
+                Daily
+              </button>
+            </li>
+            <li role="presentation">
+              <button
+                class="report__nav--weekly"
+                role="tab"
+                aria-selected="true"
+                aria-controls="weekly-stats"
+              >
+                Weekly
+              </button>
+            </li>
+            <li role="presentation">
+              <button
+                class="report__nav--monthly"
+                role="tab"
+                aria-selected="false"
+                aria-controls="monthly-stats"
+              >
+                Monthly
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section
+        class="report__body"
+        aria-label="Activity Statistics"
+        id="weekly-stats"
+        role="tabpanel"
+        tabindex="0"
+      >
+        <div class="card-wrapper card--work">
+          <div class="card" aria-labelledby="work-heading">
+            <h2 class="card__heading">Work</h2>
+            <div class="card__content">
+              <p class="card--work__time" aria-label="Current work hours">
+                5hrs
+              </p>
+              <p class="card--work__previous" aria-label="Previous work hours">
+                Previous - 7hrs
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-wrapper card--play">
+          <div class="card" aria-labelledby="play-heading">
+            <h2 class="card__heading">Play</h2>
+            <div class="card__content">
+              <p class="card--work__time" aria-label="Current play hours">
+                5hrs
+              </p>
+              <p class="card--work__previous" aria-label="Previous play hours">
+                Previous - 7hrs
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-wrapper card--study">
+          <div class="card" aria-labelledby="study-heading">
+            <h2 class="card__heading">Study</h2>
+            <div class="card__content">
+              <p class="card--work__time" aria-label="Current study hours">
+                5hrs
+              </p>
+              <p class="card--work__previous" aria-label="Previous study hours">
+                Previous - 7hrs
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-wrapper card--exercise">
+          <div class="card" aria-labelledby="exercise-heading">
+            <h2 class="card__heading">Exercise</h2>
+            <div class="card__content">
+              <p class="card--work__time" aria-label="Current exercise hours">
+                5hrs
+              </p>
+              <p
+                class="card--work__previous"
+                aria-label="Previous exercise hours"
+              >
+                Previous - 7hrs
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-wrapper card--social">
+          <div class="card" aria-labelledby="social-heading">
+            <h2 class="card__heading">Social</h2>
+            <div class="card__content">
+              <p class="card--work__time" aria-label="Current social hours">
+                5hrs
+              </p>
+              <p
+                class="card--work__previous"
+                aria-label="Previous social hours"
+              >
+                Previous - 7hrs
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-wrapper card--self-care">
+          <div class="card" aria-labelledby="self-care-heading">
+            <h2 class="card__heading">Self Care</h2>
+            <div class="card__content">
+              <p class="card--work__time" aria-label="Current self care hours">
+                5hrs
+              </p>
+              <p
+                class="card--work__previous"
+                aria-label="Previous self care hours"
+              >
+                Previous - 7hrs
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
