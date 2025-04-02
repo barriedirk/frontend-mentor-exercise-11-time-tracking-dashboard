@@ -33,6 +33,7 @@ html {
 }
 
 body {
+  position: relative;
   font-family: var(--ff-family);
   font-optical-sizing: auto;
   font-size: 1.8rem;
@@ -51,13 +52,11 @@ body {
   flex-direction: column;
   gap: 2.4rem;
   align-items: center;
-}
-
-.report__wrapper {
   padding: 24px;
 }
 
 .report__header {
+  grid-area: header;
   max-width: 327px;
   width: 100%;
   background-color: var(--clr-navy-900);
@@ -80,15 +79,19 @@ body {
 
 .profile-text-report {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: var(--fw-normal);
   color: var(--clr-navy-200);
 }
 
 .profile-text-name {
   font-size: 2.4rem;
-  font-weight: 400;
+  font-weight: var(--fw-light);
   color: var(--clr-white);
   white-space: nowrap;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 170px;
 }
 
 .report__header--nav {
@@ -122,6 +125,7 @@ body {
 }
 
 .report__body {
+  grid-area: body;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -130,39 +134,49 @@ body {
 }
 
 .card-wrapper {
-  padding-top: 50px;
+  padding-top: 33px;
   background-color: var(--clr-grey-200);
   border-radius: 15px;
   background-repeat: no-repeat;
-  background-position: 90% -10px;
+  background-position: 90% -5px;
+  background-size: 57px 57px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .card-wrapper.card--work {
+  grid-area: work;
   background-color: #ff8b64;
   background-image: url("./images/icon-work.svg");
 }
 
 .card-wrapper.card--play {
+  grid-area: play;
   background-color: #55c2e6;
   background-image: url("./images/icon-play.svg");
 }
 
 .card-wrapper.card--study {
+  grid-area: study;
   background-color: #ff5e7d;
   background-image: url("./images/icon-study.svg");
 }
 
 .card-wrapper.card--exercise {
+  grid-area: exercise;
   background-color: #4bcf82;
   background-image: url("./images/icon-exercise.svg");
 }
 
 .card-wrapper.card--social {
+  grid-area: social;
   background-color: #7335d2;
   background-image: url("./images/icon-social.svg");
 }
 
 .card-wrapper.card--self-care {
+  grid-area: self-care;
   background-color: #f1c75b;
   background-image: url("./images/icon-self-care.svg");
 }
@@ -207,8 +221,8 @@ body {
   width: 100%;
   height: 100%;
   background-image: url("./images/icon-ellipsis.svg");
-  background-repeat: no-repeat;
   background-position: 100% center;
+  background-repeat: no-repeat;
 }
 
 .card__previous {
@@ -221,8 +235,119 @@ body {
   color: var(--clr-white) !important;
 }
 
-@media screen and (min-width: 375px) {
+.hidden {
+  display: none !important;
+}
+
+.spinner-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Spinner styles */
+.spinner {
+  border: 8px solid #f3f3f3; /* Light grey border */
+  border-top: 8px solid #3498db; /* Blue color for the spinning part */
+  border-radius: 50%; /* Make it circular */
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite; /* Animation to spin it */
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .report__header,
+  .report__body {
+    max-width: 677px;
+  }
+
+  .report__header--nav ul {
+    justify-content: space-evenly;
+  }
+
+  .report__body {
+    display: grid;
+    grid-template-areas:
+      "work play study"
+      "exercise social self-care";
+    grid-template-columns: repeat(3, 210px);
+  }
+
+  .profile-text-name {
+    width: 400px;
+  }
+
+  .card__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card__time {
+    font-size: 5.6rem;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .report__header,
+  .report__body {
+    max-width: auto;
+  }
+
+  .report__body {
+    display: grid;
+    grid-template-columns: repeat(3, 255px);
+    grid-template-rows: repeat(2, 244px);
+    grid-row-gap: 32px;
+  }
+
+  .report__wrapper {
+    display: grid;
+    grid-template-areas: "header body";
+    grid-template-columns: 255px 1fr;
+  }
+
+  .report__header--nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .profile-image {
+    width: 78px;
+    height: 78px;
+  }
+
+  .profile-text-name {
+    white-space: normal;
+    font-size: 4rem;
+    overflow: none;
+    width: auto;
+  }
+
+  .profile-info {
+    height: 354px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  .report__wrapper {
+    margin: auto;
+    width: 1116px;
+  }
 }

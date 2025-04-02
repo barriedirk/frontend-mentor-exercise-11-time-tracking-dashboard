@@ -36,6 +36,9 @@
     <script type="module" src="./main.js"></script>
   </head>
   <body>
+    <div class="spinner-wrapper">
+      <div class="spinner"></div>
+    </div>
     <main class="report__wrapper">
       <section class="report__header" aria-label="User Profile">
         <div class="profile-info">
@@ -53,10 +56,11 @@
           <ul role="tablist">
             <li role="presentation">
               <button
-                class="report__nav--daily color-white"
+                class="report__nav--daily"
                 role="tab"
                 aria-selected="false"
                 aria-controls="daily-stats"
+                data-property="daily"
               >
                 Daily
               </button>
@@ -67,6 +71,7 @@
                 role="tab"
                 aria-selected="true"
                 aria-controls="weekly-stats"
+                data-property="weekly"
               >
                 Weekly
               </button>
@@ -77,6 +82,7 @@
                 role="tab"
                 aria-selected="false"
                 aria-controls="monthly-stats"
+                data-property="monthly"
               >
                 Monthly
               </button>
@@ -84,21 +90,11 @@
           </ul>
         </nav>
       </section>
-      <section
-        class="report__body"
-        aria-label="Daily Activity Statistics"
-        id="daily-stats"
-        role="tabpanel"
-        tabindex="0"
-        hidden
-      >
-        <!-- Copy of card content with daily stats -->
-      </section>
 
       <section
         class="report__body"
         aria-label="Weekly Activity Statistics"
-        id="weekly-stats"
+        id="report--stats"
         role="tabpanel"
         tabindex="0"
       >
@@ -106,9 +102,9 @@
           <div class="card" aria-labelledby="work-heading">
             <h2 id="work-heading" class="card__heading">Work</h2>
             <div class="card__content">
-              <p class="card__time" aria-label="Current work hours">5hrs</p>
+              <p class="card__time" aria-label="Current work hours">...</p>
               <p class="card__previous" aria-label="Previous work hours">
-                Previous - 7hrs
+                Loading content...
               </p>
             </div>
           </div>
@@ -118,9 +114,9 @@
           <div class="card" aria-labelledby="play-heading">
             <h2 id="play-heading" class="card__heading">Play</h2>
             <div class="card__content">
-              <p class="card__time" aria-label="Current play hours">5hrs</p>
+              <p class="card__time" aria-label="Current play hours">...</p>
               <p class="card__previous" aria-label="Previous play hours">
-                Previous - 7hrs
+                Loading content...
               </p>
             </div>
           </div>
@@ -130,9 +126,9 @@
           <div class="card" aria-labelledby="study-heading">
             <h2 id="study-heading" class="card__heading">Study</h2>
             <div class="card__content">
-              <p class="card__time" aria-label="Current study hours">5hrs</p>
+              <p class="card__time" aria-label="Current study hours">...</p>
               <p class="card__previous" aria-label="Previous study hours">
-                Previous - 7hrs
+                Loading content...
               </p>
             </div>
           </div>
@@ -142,9 +138,9 @@
           <div class="card" aria-labelledby="exercise-heading">
             <h2 id="exercise-heading" class="card__heading">Exercise</h2>
             <div class="card__content">
-              <p class="card__time" aria-label="Current exercise hours">5hrs</p>
+              <p class="card__time" aria-label="Current exercise hours">...</p>
               <p class="card__previous" aria-label="Previous exercise hours">
-                Previous - 7hrs
+                Loading content...
               </p>
             </div>
           </div>
@@ -154,9 +150,9 @@
           <div class="card" aria-labelledby="social-heading">
             <h2 id="social-heading" class="card__heading">Social</h2>
             <div class="card__content">
-              <p class="card__time" aria-label="Current social hours">5hrs</p>
+              <p class="card__time" aria-label="Current social hours">...</p>
               <p class="card__previous" aria-label="Previous social hours">
-                Previous - 7hrs
+                Loading content...
               </p>
             </div>
           </div>
@@ -166,33 +162,20 @@
           <div class="card" aria-labelledby="self-care-heading">
             <h2 id="self-care-heading" class="card__heading">Self Care</h2>
             <div class="card__content">
-              <p class="card__time" aria-label="Current self care hours">
-                5hrs
-              </p>
+              <p class="card__time" aria-label="Current self care hours">...</p>
               <p class="card__previous" aria-label="Previous self care hours">
-                Previous - 7hrs
+                Loading content...
               </p>
             </div>
           </div>
         </div>
-      </section>
-
-      <section
-        class="report__body"
-        aria-label="Monthly Activity Statistics"
-        id="monthly-stats"
-        role="tabpanel"
-        tabindex="0"
-        hidden
-      >
-        <!-- Copy of card content with monthly stats -->
       </section>
     </main>
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="https://github.com/barriedirk">Barrie Dirk</a>.
+      >. Coded by <a href="https://github.com/barriedirk">Barrie Freyre</a>.
     </div>
   </body>
 </html>
