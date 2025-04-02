@@ -248,6 +248,8 @@ body {
   width: 100%;
   z-index: 10;
   background: rgba(255, 255, 255, 0.15);
+  top: 0;
+  left: 0;
 }
 
 /* Spinner styles */
